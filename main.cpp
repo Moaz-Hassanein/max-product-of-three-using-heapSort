@@ -2,9 +2,9 @@ void maxHeapify(int arr[],int index,int heapSize) {
     int l=2*index+1;
     int r=2*index+2;
     int max=index;
-    if(l<heapSize && arr[max]>arr[l])
+    if(l<heapSize && arr[max]<arr[l])
         max=l;
-    if(r<heapSize  && arr[max]>arr[r])
+    if(r<heapSize  && arr[max]<arr[r])
         max=r;
     if(max!=index) {
         swap(arr[index],arr[max]);
@@ -29,6 +29,6 @@ void heapSort(int arr[],int arrSize) {
 
 int maxProductOfThree(int arr[],int arrSize) {
     heapSort(arr,arrSize);
-    ll result = max(arr[0]*arr[1]*arr[2],arr[0]*arr[arrSize-1]*arr[arrSize-2]);
+    ll result = max(arr[0]*arr[1]*arr[arrSize-1],arr[arrSize-1]*arr[arrSize-2]*arr[arrSize-3]);
     return result;
 }
