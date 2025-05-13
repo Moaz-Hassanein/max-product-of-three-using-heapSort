@@ -27,9 +27,9 @@ void heapSort(int arr[],int arrSize) {
     }
 }
 
-int maxProductOfThree(int arr[],int arrSize) {
+int maxProductOfTriplet(int arr[],int arrSize) {
     if(arrSize < 3)
-        return 0;
+        return -1;
     heapSort(arr,arrSize);
     ll result = max(arr[0]*arr[1]*arr[arrSize-1],arr[arrSize-1]*arr[arrSize-2]*arr[arrSize-3]);
     return result;
